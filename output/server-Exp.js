@@ -1,17 +1,26 @@
-const express = require('express'); //Importacion modulo Express
-const app = express(); //Creacion del objeto
+const express = require('express'); // => Importacion modulo Express
+const app = express(); // => Creacion del objeto
+const port = 3000;
 
 //Recursos
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
-//Enrutamiento 
-app.get('/',(req,res) => {
+app.set('view engine', 'ejs'); // => Carga el modulo del motor view engine 👀
+app.use(express.static('public')); // => Ruta donded se encuentran los archivos estaticos
 
-    res.render('index');
+//Enrutamiento desde la raiz 
+app.get('/',(req,res) => {
+    res.render('index',{nombre: 'Hernan'});
+});
+
+app.get('/contacto',(req,res) => {
+    res.send('MUCHAAAAACHOS');
+});
+
+app.get('/carrousel',(req,res) => {
+    res.render('carrousel',{nombre: 'Hernan'});
 });
 
 
-app.listen(3000, () => {
-    console.log('Funca en el puerto: 3000');
+app.listen(port, () => {
+    console.log('Funca en el puerto:', port);
 })
 

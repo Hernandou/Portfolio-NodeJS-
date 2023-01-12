@@ -1,8 +1,10 @@
-body{
-    background-color: black;
+.containerimg{
+    display: flex;
+    align-items: center;
+    background-color: red;
+    
 }
 
-h1{
-    color:violet;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.containerimg.card1{
+    border-radius: 40px;
 }
